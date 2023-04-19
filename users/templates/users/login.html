@@ -1,0 +1,29 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'news/css/style.css' %}" type="text/css">
+<div class="body_comp" style="text-align: left;">
+<h2>Вход</h2>   
+
+<form method="POST">
+    {% csrf_token %}
+    <fieldset class="form-group">
+        <legend>Вход</legend>
+        <h4>  {{ form|crispy }}</h4>
+    </fieldset>
+    <div class="form-group">
+        <a  href="{% url 'profile' %}"><button class="btn" type="submit">Вход</button></a>
+       
+    </div>
+</form>
+    
+<div >   
+       <h3> Еще нет учетной записи? <a  href="{% url 'register' %}" class="btn">Регистрация</a></h3>
+    
+</div>
+{% endblock %}
+
+
+

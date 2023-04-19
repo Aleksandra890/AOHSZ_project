@@ -1,0 +1,25 @@
+.zagolovok{
+    color: rgb(8, 5, 33);
+    text-align: left;
+    font-size: 35px;
+}
+
+.body_comp{
+    background-color: white;
+    padding: 6vh;
+    
+}
+
+.nav_about{
+    padding-right: 3em;
+    
+}
+
+.txt3{
+    cursor: pointer;
+    color: rgb(16, 12, 58);
+}
+
+.txt3:hover{
+    color: #D81B16;
+}

@@ -1,0 +1,29 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'news/css/style.css' %}" type="text/css">
+
+<div class="body_comp" style="text-align:left;">
+    <h1 class="zagolovok">{{ post.name }}</h1> 
+       
+    <img src="{{ post.image }}" width="100%" height="auto"> 
+    <h3>{{ post.text1 }}</h3>   
+    <h3>{{ post.text2 }}</h3> 
+            
+    {% if user.is_authenticated %}
+
+    <form method="POST" name="addincart" action="{% url 'addincart' %}">
+        {% csrf_token %}
+        <input type="hidden" class="form-control" id="username" name="username" value="{{ username }}">
+        <input type="hidden" class="form-control" id="postname" name="postname" value="{{ post.name }}">
+        <input type="hidden" class="form-control" id="posttext1" name="posttext1" value="{{ post.text1 }}">
+        <input type="hidden" class="form-control" id="postimage" name="postimage" value="{{ post.image }}">
+    <button class="navigation btn" type="submit">Заказать</button>
+    </form>
+
+    
+    {% endif %}
+</div>
+
+{% endblock %}

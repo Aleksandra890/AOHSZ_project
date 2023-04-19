@@ -1,0 +1,104 @@
+{% load static %}
+<html lang="ru">
+<meta content="text/html; charset=UTF-8">
+<title>АО "Хабаровский судостроительный завод"</title>
+<link rel="stylesheet" href="{% static 'main/css/style1.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'main/css/style2.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'main/css/style3.css' %}" type="text/css">
+
+<body align="center">
+
+
+  <header class="d-flex flex-wrap align-items-center justify-content-center">
+    <a href="https://www.aoosk.ru/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+      <img id="logoao" style="width: auto; height: auto; padding-right: 8vh;" src="{% static 'main/img/logo-osk150.png' %}" alt="Логотип ОСК">
+    </a>
+    <a onclick="document.location='/'" style="cursor: pointer;" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+      <img id="logohsz" style="width: auto; height: auto;" src="{% static 'main/img/logo-hsz97.png' %}" alt="Логотип ХСЗ">
+    </a>
+
+    <a onclick="document.location='/'" style="cursor: pointer;" class="justify-content-center mb-md-0" id="text">
+      <h2 id="text-logo">Акционерное общество<br> ХАБАРОВСКИЙ СУДОСТРОИТЕЛЬНЫЙ ЗАВОД</h2>
+    </a>
+
+    {% if user.is_authenticated %}
+    <div>
+      <a  href="{% url 'profile' %}"><button class="btn">Профиль</button></a>
+		  <a  href="{% url 'logout' %}"><button class="btn">Выход</button></a>
+      {% else %}
+      <a  href="{% url 'login' %}"><button class="btn">Вход</button></a>
+		  <a href="{% url 'register' %}"><button class="btn">Регистрация</button></a>
+
+    </div>
+    
+    {% endif %}
+
+</header>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div >
+      <ul class="nav justify-content-center flex-wrap">
+        <li class="nav-item menu-item" style="padding-right: 5vh;">
+          <button class="btn1" onclick="document.location='/'">Главная</button>
+        </li>
+        <li class="nav-item menu-item" style="padding-right: 5vh;">
+          <button class="btn1" onclick="document.location='/about-company'">Компания</button>
+        </li>
+        <li class="nav-item menu-item" style="padding-right: 5vh;">
+          <button class="btn1" onclick="document.location='/news'">Новости</button>
+        </li>
+        <li class="nav-item menu-item" style="padding-right: 5vh;">
+          <button class="btn1" onclick="document.location='/product'">Продукция</button>
+        </li>
+        <li class="nav-item menu-item" style="padding-right: 5vh;">
+          <button class="btn1" onclick="document.location='/'">Пресс-центр</button>
+        </li>
+        <li class="nav-item menu-item" style="padding-right: 5vh;">
+          <button class="btn1" onclick="document.location='/'">Контакты</button>
+        </li>
+        {% if user.is_authenticated %}
+        <li class="nav-item menu-item" >
+          <button class="btn1" onclick="document.location='/cart/cartochka'">Корзина</button>
+        </li>
+        {% endif %}
+      </ul>
+      </div>
+    </nav>
+      
+    <aside>
+    <span>
+    <div class="widget-search">			
+        <marquee>
+        <p>
+            <strong> Хабаровский судостроительный завод приглашает выпускников школ стать студентом-целевиком 
+            ведущих вузов Дальнего востока: ДВФУ, КНаГУ, ТОГУ, ДВГУПС \\ Заводу срочно требуются: Главный сварщик \ Сборщик корпусов 
+            металлических судов \ Строитель кораблей \ Сварщик на автоматических и полуавтоматических машинах \ Сварщик ручной дуговой 
+            сварки </strong>
+            &nbsp;| Отдел кадров: +7 (4212) 45-85-43, +7 (984) 260-01-88. Присылайте резюме: 
+            <strong>personal@aohsz.ru</strong>
+        </p>
+        </marquee>
+    </div>
+    </span> 
+    </aside>
+        
+        <div class="center" id="smm" style="margin-bottom: 3vh;">  
+            <a href="https://twitter.com/aohsz/" target="_blank" title="Twitter"><img src="{% static 'main/img/twitter.svg' %}" alt="Twitter"></a>
+            <a href="https://www.youtube.com/channel/UCSM43qdW4M5rslVR-zFNwMg?view_as=subscriber" target="_blank" title="YouTube"><img src="{% static 'main/img/youtube.png' %}" alt="YouTube"></a>
+            <a href="https://vk.com/aohsz_com" target="_blank" title="ВКонтакте"><img src="{% static 'main/img/vk.svg' %}" alt="ВКонтакте"></a>
+            <a href="https://t.me/ao_hsz/" target="_blank" title="Telegram"><img src="{% static 'main/img/telegram.png' %}"></a>           
+        </div>
+
+<div>
+  {% block content %}        
+  {% endblock %}
+
+</div>
+
+
+<footer>
+ <p> © 1953 - 2023 Акционерное общество "Хабаровский судостроительный завод" (входит в АО "ОСК")</p>
+</footer>
+
+</body>
+</html>

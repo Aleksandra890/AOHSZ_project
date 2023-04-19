@@ -1,0 +1,74 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block content %}
+
+<iframe width="100%" height="100%" src="slider.html" name="topFrame" scrolling="no" frameborder="0" ></iframe>
+
+<div class="FirstNews">
+  <table align="center" style="padding-bottom: 3vh; padding-top: 6vh;">
+    <tr>
+      <td style="padding-left:3vh;">
+        <a href="#"><h2 class="text1">ХАБАРОВСКИЙ СУДОСТРОИТЕЛЬНЫЙ 
+          ЗАВОД ПРОИЗВЁЛ ЗАКЛАДКУ НЕСАМОХОДНОГО ЗЕМЛЕСОСА ПРОЕКТА 4395</h2></a>
+        <h5 class="textdata">29 июня</h5>
+        <p style="color: rgb(32, 32, 32);">Сегодня в 69 день рождения Хабаровского судостроительного завода состоялась торжественная 
+          церемония закладки дноуглубительного несамоходного землесоса проекта 4395 класса 
+          Российского речного регистра «X О 2,0 (лед 10) А»....</p>
+      </td>
+      <td>
+        <a href="#" class="scaleimg"><img class="scaleimg" src="{% static 'main/img/news/new1.jpg' %}"></a>
+      </td>
+    </tr>
+  </table>
+
+
+<div>
+ <table style="padding-bottom: 3vh;">
+  <tr style="text-align: left;">
+    <td class="newsmin" id="shad1">
+      <a href="#"><h4 class="text1 text2">ПРЕДСТАВИТЕЛИ СЕВЕРО-ЗАПАДНОГО РЫБОПРОМЫШЛЕННОГО КОНСОРЦИУМА ПОСЕТИЛИ АО «ХСЗ»</h4></a>
+      <h5 class="textdata" align="center">6 апреля</h5>
+      <div class="scaleimg" style="width: 100%;"><img class="scaleimg" src="{% static 'main/img/news/new2.jpg' %}"></div>
+    </td>
+    <td class="newsmin" id="shad2">
+      <a href="#"><h4 class="text1 text2">И.О. РЕКТОРА ТОГУ И ЗАМЕСТИТЕЛЬ МИНИСТРА ОБРАЗОВАНИЯ И НАУКИ ПОСЕТИЛИ ХАБАРОВСКИЙ СУДОСТРОИТЕЛЬНЫЙ ЗАВОД</h4></a>
+      <h5 class="textdata" align="center">29 марта</h5>
+      <div class="scaleimg" style="width: 100%;"><img class="scaleimg" src="{% static 'main/img/news/new3.jpg' %}"></div>
+    </td>
+    <td class="newsmin" id="shad3">
+      <a href="#"><h4 class="text1 text2">НА АО «ХСЗ» ПРОШЛА РАБОЧАЯ ВСТРЕЧА С ДИРЕКТОРОМ АО «ДАЛЬРЫБА» И ПРАВИТЕЛЬСТВОМ ХАБАРОВСКОГО КРАЯ</h4></a>
+      <h5 class="textdata" align="center">22 марта</h5>
+      <div class="scaleimg" style="width: 100%;"><img class="scaleimg" src="{% static 'main/img/news/new4.jpg' %}"></div>
+    </td>
+  </tr>
+ </table>
+</div>
+
+<table align="center" style="padding-bottom: -3vh;">
+  <tr>
+    <td>
+      <a href="#" class="scaleimg"><img class="scaleimg" src="{% static 'main/img/news/newsend.jpg' %}"></a>
+    </td>
+    <td style="padding-left:3vh; padding-right: 3vh;">
+      <a href="#"><h2 class="text1">Поздравляем Вас с ДНЁМ КОРАБЛЕСТРОИТЕЛЯ!</h2></a>
+      <h5 class="textdata">29 июня</h5>
+      <p style="color: rgb(32, 32, 32);">Уважаемые коллеги! Дорогие Хабаровские корабелы! 
+        Примите искренние поздравление С Днём кораблестроителя! Труд корабелов был и 
+        остаётся востребованным, важным и почётным во все времена, от истоков освоения 
+        человеком водных просторов и по сей день. Желаем с…</p>
+    </td>
+    
+  </tr>
+</table>
+</div>
+
+<div class="GlavText">
+<h1>АО «Хабаровский судостроительный завод» (входит в ОСК) - один из лидеров судостроения на Дальнем Востоке.</h1>
+<h6>АО "ХСЗ" имеет огромный опыт строительства кораблей и судов разных классов и назначений из 
+  всех видов материалов применяемых в судостроении. На заводе принята наиболее прогрессивная 
+  технологическая схема постройки судов поточно-позиционным методом, позволяющая вести ускоренное серийное строительство заказов.</h6>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'news/css/style.css' %}" type="text/css">
+
+<div class="body_comp">
+
+    <h1 class="zagolovok">Новости</h1> 
+
+    {% if user.is_superuser %}
+       <div align="left"><button onclick="document.location='/news/create'" class="btn" >Добавить новость</button></div>  
+    {% endif %}
+   
+    <table style="margin-top: 8vh; margin-bottom: 8vh;">
+       <tr>
+           <td class="nav_about">
+               <a onclick="document.location='/news'" class="txt3"><h3>Пресс-центр</h3></a>
+           </td>
+           <td class="nav_about">
+               <a onclick="document.location='/news/SME_O_NAS'" class="txt3"><h3>СМИ о НАС</h3></a>
+           </td>
+           <td class="nav_about">
+               <a onclick="document.location='/news'" class="txt3"><h3>Контакты пресс-службы</h3></a>
+           </td>
+       </tr>
+   </table>
+ 
+  
+   {% if articles %} 
+   <table>
+   {% for element in articles %}
+       
+<div>
+   
+        <tr>
+            <td>
+             <img src="{{ element.image }}" width="500px" height="400px">   
+            </td>
+            <td style="padding-left: 3vh;">
+
+                
+                
+              <a href="{% url 'NewsDetailView' element.id %}"><h2 class="text1">{{ element.title }}</h2></a>
+        <h5 class="textdata">{{ element.data }}</h5>
+        <h3>{{ element.text1 }}</h3>
+
+         {% if user.is_superuser %}
+                <a href="{% url 'NewsUpdate' element.id %}"><button class="btn">Редактировать статью</button></a>
+                <a href="{% url 'NewsDelete' element.id %}"><button class="btn">Удалить статью</button></a>
+                {% endif %}  
+            </td>
+        </tr>
+    
+        
+                                  
+</div>		
+{% endfor %}
+</table>
+{% endif %}	  
+
+</div>
+
+{% endblock %}

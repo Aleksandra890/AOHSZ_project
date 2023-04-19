@@ -1,0 +1,25 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'news/css/style.css' %}" type="text/css">
+
+<div class="body_comp">
+
+    <h1 class="zagolovok">Добавить новость</h1> 
+   
+    <form method="post" enctype="multipart/form-data" style="text-align: left;">
+        {% csrf_token %}
+
+       <h3>Заголовок: {{ form.title }}</h3>
+       <h3>Дата: {{ form.data }}</h3>
+       <h3>Анонс: {{ form.text1 }}</h3>
+       <h3>Фото: {{ form.image }}</h3>
+       <h3>Статья: {{ form.fultext }}</h3>
+         <span>{{ error }}</span>
+        <button type="submit" onclick="document.location='/news'" class="btn">Сохранить</button>
+      </form>
+
+</div>
+
+{% endblock %}

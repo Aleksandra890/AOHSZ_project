@@ -1,0 +1,50 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'news/css/style.css' %}" type="text/css">
+
+<div class="body_comp">
+
+    <h1 class="zagolovok">Продукция</h1> 
+   
+    <table style="margin-top: 8vh; margin-bottom: 8vh;">
+       <tr>
+           <td class="nav_about">
+               <a onclick="document.location='/'" class="txt3"><h3>► УСЛУГИ</h3></a>
+           </td>
+           <td class="nav_about">
+               <a onclick="document.location='/product/pv'" class="txt3"><h3>Военная продукция</h3></a>
+           </td>
+           <td class="nav_about">
+               <a onclick="document.location='/product/pg'" class="txt3"><h3>Гражданская продукция</h3></a>
+           </td>
+           <td class="nav_about">
+            <a onclick="document.location='/'" class="txt3"><h3>Реализация объектов недвижимости</h3></a>
+        </td>
+       </tr>
+       
+   </table>
+ 
+   {% if object %} 
+   <table>
+   {% for element in object %}
+       
+<div>
+   
+        <tr >
+            <td>
+            <a href="{% url 'ProdDetailView' element.id %}"><h2 class="text1">{{ element.name }}</h2></a> 
+             <img src="{{ element.image }}" width="100%" style="padding-bottom: 13vh;"> 
+            </td>
+        </tr>                              
+</div>
+		
+{% endfor %}
+</table>
+{% endif %}	 
+  
+
+</div>
+
+{% endblock %}

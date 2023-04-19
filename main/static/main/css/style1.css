@@ -1,0 +1,143 @@
+:root {
+	--index: calc(1vw + 1vh);
+	
+	--transition: transform .75s cubic-bezier(.075, .5, 0, 1);
+}
+
+.align-items-center {
+    align-items: center!important;
+}
+.justify-content-center {
+    justify-content: center!important;
+    padding-right: 8vh;
+}
+.flex-wrap {
+    flex-wrap: wrap!important;
+}
+
+.d-flex {
+    display: flex!important;
+}
+
+.btn{
+  background-color:  #D81B16;
+  color: white;
+  border-radius: 5px;
+  border-color: white;
+  padding: 1em;
+  cursor: pointer;
+}
+
+.btn:hover{
+    background-color: white;
+    color: #D81B16; 
+}
+
+body {
+    background-color: #253B4D;
+    font-family: DINPro, sans-serif;   
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 8%;
+    margin-right: 8%;
+    align-content: center;
+}
+
+header {
+    height: auto; 
+    width: auto; 
+    background-color: #727E8A;
+    color: white;
+    position: relative;
+    display: block;
+}
+
+#text-logo {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: calc(var(--index) * 1.2);
+    /* font-size: 2em; */
+    margin: 0.67em 0;
+    display: block;
+}
+
+#text{
+    width: 40%;
+}
+
+nav {
+    height: auto;
+    width: auto;
+    padding: 0;
+    position: relative;
+    border-bottom: 1px solid white;
+    border-top: 1px solid white; 
+    display: block;
+    background-image:url( "fon.png");
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    
+    z-index: 1;
+}
+
+ a {
+    text-decoration: none;   
+} 
+
+.menu-item :hover{
+    cursor: pointer;
+    background-color: #de2626; 
+    opacity: .7;
+}
+
+.widget-search{
+    padding: 0;
+    margin: 0;
+    background-color: #D81B16;
+ }
+p {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-size: calc(var(--index) * .8);
+    color: white;
+}
+ .center{
+ margin: 0;
+ }
+
+#smm {
+    width: auto;
+    height: 30px;
+    background-image: linear-gradient(60deg, #29ABE2, #00385D);
+    border-bottom: 1px solid white;
+}
+
+#smm img {
+    float: right;
+    padding: 4px 20px 2px 20px;
+    width: 22px;
+    height: 22px;
+   
+}
+
+.btn1{
+    cursor: pointer;
+    color: white;
+    background-color: rgba(0, 0, 0, 0);
+    border-color: rgba(0, 0, 0, 0);
+    padding: 2.3vh;
+    font-size: large;
+}
+
+.btn1:hover{
+    color: white;
+    background-color: rgba(184, 34, 34, 0.755);
+    border-color: rgba(0, 0, 0, 0);
+}

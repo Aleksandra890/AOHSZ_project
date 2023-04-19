@@ -1,0 +1,47 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'news/css/style.css' %}" type="text/css">
+
+<div class="body_comp" style="text-align:left;">
+    <h1 class="zagolovok">Корзина</h1> 
+
+    {% if cart %}
+
+    {% if not user.is_superuser %}
+    <form method="POST" name="cartclear" action="{% url 'cartclear' %}">
+        {% csrf_token %}
+        <input type="hidden" class="form-control" id="username" name="username" value="{{ username }}">       
+    <button class="btn" type="submit">Очистить корзину</button>
+    </form>
+    {% endif %}
+
+    <table>
+	{% for element in cart %}
+	    
+<div>   
+    <tr style="margin-bottom: 15vh;">
+        <td>
+         <img src="{{ element.imageCart }}" width="500px">   
+        </td>
+        <td style="padding-left: 3vh;">
+            {% if user.is_superuser %}
+            <h3>Заказчик: {{ element.catProf }}</h3>
+            {% endif %}
+    <h3 style="color: rgb(204, 26, 26);">{{ element.nameCart }}</h3>  
+    <h3>{{ element.textCart }}</h3> 
+
+        </td>
+    </tr>
+           
+</div>		
+{% endfor %} 
+</table>
+{% else %}
+	<h3>Ваша корзина пуста</h3>
+{% endif %}
+
+</div>
+
+{% endblock %}

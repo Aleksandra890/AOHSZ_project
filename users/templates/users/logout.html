@@ -1,0 +1,14 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="vse">
+    <h2>Вы вышли из своей учетной записи</h2>
+    <div class="border-top pt-3">
+       
+        <a href="{% url 'login' %}"><button class="navigation">Войти</button></a>
+        
+    </div>
+</div>
+{% endblock %}
